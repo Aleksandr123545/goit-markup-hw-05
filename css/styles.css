@@ -824,6 +824,7 @@ img {
 
 .subscribe-form-box {
   display: inline-flex;
+  gap: 24px;
 }
 
 .subscribe-form-labl {
@@ -840,11 +841,18 @@ img {
   height: 40px;
   margin-right: 24px;
   padding-left: 16px;
+  color: #ffffff;
 
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  background-color: transparent;
   border-radius: 4px;
   border: 1px solid var(--WHITE, #fff);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
+
+placeholder: color #ffffff;
 
 .subscribe-botton {
   color: #fff;
@@ -854,16 +862,19 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
 
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   display: inline-flex;
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  /* gap: 16px; */
+  cursor: pointer;
+  border: none;
+  padding: 8px 24px;
 
   border-radius: 4px;
-  background: var(--IRIS, #4d5ae5);
+  background: #4d5ae5;
 }
 
 .subscribe-botton:hover {
@@ -874,6 +885,7 @@ img {
 
 .icon-submit {
   fill: #4d5ae5;
+  margin-left: 16px;
 }
 
 .icon-submit:hover {
