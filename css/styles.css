@@ -855,26 +855,23 @@ img {
 placeholder: color #ffffff;
 
 .subscribe-botton {
-  color: #fff;
-
+  display: flex;
+  min-width: 165px;
+  height: 40px;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
-
-  min-width: 165px;
-  height: 40px;
-  display: inline-flex;
-  padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  /* gap: 16px; */
+
+  /* padding: 8px 24px; */
   cursor: pointer;
   border: none;
   padding: 8px 24px;
-
   border-radius: 4px;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
 }
 
 .subscribe-botton:hover {
