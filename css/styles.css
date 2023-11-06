@@ -259,9 +259,6 @@ img {
   padding-bottom: 120px;
 }
 
-.container-studio {
-}
-
 .studio-title {
   color: #2e2f42;
 }
@@ -271,9 +268,6 @@ img {
   display: flex;
   gap: 24px;
   padding-inline-start: 0;
-}
-
-.studio-link {
 }
 
 .studio-icons {
@@ -402,9 +396,6 @@ img {
   padding-bottom: 120px;
 }
 
-.container-our-portfolio {
-  width: ;
-}
 .our-portfolio-title {
   font-size: 36px;
   font-weight: 700;
@@ -558,7 +549,6 @@ img {
   display: flex;
   flex-direction: column;
   max-width: 208px;
-  justify-content: ;
 }
 
 .footer-teame-icon-list {
@@ -645,6 +635,11 @@ img {
   line-height: 0;
   stroke: #111111;
   transition: stroke 250ms linear;
+}
+
+.modal-close-btn-icon {
+  background-color: #e7e9fc;
+  border-radius: 50%;
 }
 
 .modal-close-btn:hover,
