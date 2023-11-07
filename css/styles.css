@@ -597,12 +597,13 @@ img {
   z-index: 999999999;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(46, 47, 66, 0.4);
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 250ms linear, visibility 250ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -622,32 +623,43 @@ img {
   min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
   position: absolute;
+  display: flex;
   top: 24px;
   right: 24px;
   border: none;
   background-color: transparent;
   padding: 0px;
   line-height: 0;
-  transition: stroke 250ms linear;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #e7e9fc;
   stroke-width: 1px;
   stroke: (0, 0, 0, 0.1);
   stroke: #2e2f42;
-}
-
-.modal-close-btn-icon {
-  /* background-color: #e7e9fc;
-  border-radius: 50%; */
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  stroke: #fd9222;
+  background-color: #404bbf;
+  fill: #ffffff;
+}
+
+.modal-close-btn-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-description {
@@ -655,9 +667,8 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-align: center;
-  /* text-transform: uppercase; */
   color: #2e2f42;
   margin-top: 48px;
   margin-bottom: 16px;
@@ -669,13 +680,13 @@ img {
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.04em;
-  line-height: 1.16;
+  line-height: 1.17;
   color: #8e8f99;
   margin-bottom: 4px;
 }
 
 .review-form-field-wrapper {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .review-form-input-wrapper {
@@ -688,7 +699,9 @@ img {
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
-  transition: border-color 250ms linear;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  outline: transparent;
 }
 
 .review-form-field:focus {
@@ -703,28 +716,30 @@ img {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  /* fill: none; */
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   stroke: #111111;
   transition: stroke 250ms linear;
   /* fill: #2e2f42; */
 }
 
 .review-form-field:focus + .review-form-field-icon {
-  stroke: #fd9222;
+  fill: #4d5ae5;
 }
 
 .review-form-message {
   width: 100%;
-  height: 137px;
+  height: 1120px;
   font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  border-radius: 13px;
-  border: 1px solid rgba(17, 17, 17, 0.05);
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
   resize: none;
-  padding: 22px 24px;
-  color: rgba(64, 64, 64, 0.3);
-  transition: border-color 250ms linear;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-message::placeholder {
@@ -739,34 +754,34 @@ img {
 }
 
 .review-form-checkbox-wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .review-form-checkbox-label {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.6);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 
 .review-form-own-checkbox {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   fill: transparent;
+
+  cursor: pointer;
   margin-right: 12px;
 }
 
-.review-form-checkbox:checked
-  + .review-form-checkbox-label
-  .review-form-own-checkbox {
-  /* background-color: #fd9222; */
-  fill: #ffffff;
+.review-form-checkbox:checked + .review-form-own-checkbox {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .review-form-checkbox:focus
@@ -775,30 +790,33 @@ img {
   outline: 2px solid rgba(0, 0, 255, 0.5);
 }
 
-.review-form-btn {
-  display: inline-flex;
-  width: 137px;
-  color: #fff;
-  text-align: center;
-  justify-content: center;
+.privacy-policy-link {
+  color: #4d5ae5;
+}
 
+.review-form-btn {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-family: "Roboto";
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  color: #ffffff;
+  cursor: pointer;
+  background: #4d5ae5;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  text-align: center;
+  justify-content: center;
   margin: auto;
   padding: 16px 32px;
   align-items: center;
   gap: 10px;
-  border-radius: 4px;
-  background: #4d5ae5;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-}
-
-.backdrop-review-form-btn {
-  display: inline-flex;
-  width: 100%;
 }
 
 /* =======================subscribe-form-footer=========================== */
