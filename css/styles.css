@@ -2,7 +2,6 @@ body {
   font-family: Roboto, sans-serif;
   color: #434455;
   background-color: #ffffff;
-  max-width: 1440px;
 }
 
 h2 {
@@ -199,8 +198,8 @@ img {
       rgba(46, 47, 66, 0.7)
     ),
     url("../images/hero_image.jpg");
-
   background-size: cover;
+  margin: 0 auto;
 
   max-width: 1440px;
   background-repeat: no-repeat;
